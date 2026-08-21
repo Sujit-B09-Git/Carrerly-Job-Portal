@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Register your company on Careerly and start hiring verified talent." />
+    <title>Register your company — Careerly for Employers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="employer-registration.css" />
+    <link rel="stylesheet" href="registration-fixes.css" />
+  </head>
+  <body>
+    <header class="register-header">
+      <a class="brand" href="homepage.html" aria-label="Careerly homepage"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>careerly</span><b>for employers</b></a>
+      <div><a href="mailto:hello@careerly.com">Need help?</a><span></span><p>Already registered? <a href="employer-login.html">Employer sign in →</a></p></div>
+    </header>
+
+    <main class="registration-shell">
+      <aside class="register-aside">
+        <div class="aside-pattern"></div><div class="aside-orb"></div>
+        <div class="aside-content">
+          <p class="eyebrow"><span></span> Build your next great team</p>
+          <h1>Hire people who<br />move your company<br /><em>forward.</em></h1>
+          <p class="aside-copy">Create your verified employer profile and reach professionals who care about doing meaningful work.</p>
+
+          <nav class="registration-progress" aria-label="Registration progress">
+            <button class="progress-step active" type="button" data-step="1"><span><b>1</b><i>✓</i></span><div><strong>Your details</strong><small>Authorized representative</small></div></button>
+            <button class="progress-step" type="button" data-step="2"><span><b>2</b><i>✓</i></span><div><strong>Company profile</strong><small>Business information</small></div></button>
+            <button class="progress-step" type="button" data-step="3"><span><b>3</b><i>✓</i></span><div><strong>Verification</strong><small>Review and authorize</small></div></button>
+          </nav>
+
+          <div class="trust-note"><div class="shield">◆</div><p><strong>Verified companies build more trust</strong><span>Employer verification helps candidates apply with confidence.</span></p></div>
+        </div>
+      </aside>
+
+      <section class="register-main">
+        <div class="mobile-progress"><span id="mobile-step-label">Step 1 of 4</span><div><i></i></div></div>
+        <form id="employer-form" novalidate>
+          <section class="form-step active" data-step="1">
+            <div class="form-heading"><p class="section-kicker">Authorized representative</p><h2>First, tell us about you.</h2><p>You’ll be the primary administrator for your company’s Careerly account.</p></div>
+            <div class="security-banner"><span>✓</span><p><strong>Use your official work information</strong><small>This helps us confirm that you’re authorized to recruit for the company.</small></p></div>
+            <div class="field-grid two">
+              <label>First name <span>*</span><input name="firstName" type="text" placeholder="e.g. Sujit" autocomplete="given-name" required /></label>
+              <label>Last name <span>*</span><input name="lastName" type="text" placeholder="e.g. Bharate" autocomplete="family-name" required /></label>
+            </div>
+            <label>Official work email <span>*</span><input name="workEmail" type="email" placeholder="you@company.com" autocomplete="email" required /><small class="field-help">Please avoid personal email addresses when possible.</small></label>
+            <div class="field-grid two">
+              <label>Phone number <span>*</span><div class="phone-input"><select name="phoneCountryCode" aria-label="Country code"><option>+91</option><option>+1</option><option>+44</option><option>+61</option></select><input name="phone" type="tel" placeholder="98765 43210" autocomplete="tel" required /></div></label>
+              <label>Your designation <span>*</span><select name="designation" required><option value="">Select designation</option><option>Founder / Owner</option><option>HR Director / Head</option><option>Talent Acquisition</option><option>Recruiter</option><option>Hiring Manager</option><option>Agency Recruiter</option><option>Other authorized representative</option></select></label>
+            </div>
+            <label>Create a password <span>*</span><div class="password-wrap"><input id="employer-password" name="password" type="password" placeholder="Minimum 8 characters" minlength="8" autocomplete="new-password" required /><button id="show-password" type="button">Show</button></div><div class="strength"><i></i><i></i><i></i><i></i><small>Use 8+ characters with a number and symbol.</small></div></label>
+            <label>Confirm password <span>*</span><div class="password-wrap"><input id="employer-confirm-password" name="confirmPassword" type="password" placeholder="Enter the same password again" minlength="8" autocomplete="new-password" required /><button id="show-confirm-password" type="button">Show</button></div><small class="password-match-message" aria-live="polite"></small></label>
+          </section>
+
+          <section class="form-step" data-step="2">
+            <div class="form-heading"><p class="section-kicker">Company profile</p><h2>Tell us about your company.</h2><p>Accurate details help candidates understand and trust your organization.</p></div>
+            <div class="field-grid two">
+              <label>Registered legal name <span>*</span><input name="legalName" type="text" placeholder="Company name as registered" required /></label>
+              <label>Brand / trading name<input name="brandName" type="text" placeholder="Name candidates recognize" /></label>
+            </div>
+            <label>Company logo <small class="field-help">Optional · JPG, PNG or WebP · maximum 2 MB</small><input name="companyLogo" type="file" accept="image/jpeg,image/png,image/webp" /></label>
+            <div class="field-grid two">
+              <label>Company website <span>*</span><input name="website" type="url" placeholder="https://company.com" required /></label>
+              <label>Company type <span>*</span><select name="companyType" required><option value="">Select company type</option><option>Private Limited</option><option>Public Limited</option><option>LLP / Partnership</option><option>Sole Proprietorship</option><option>Non-profit</option><option>Government organization</option><option>Recruitment agency</option></select></label>
+            </div>
+            <div class="field-grid three">
+              <label>Industry <span>*</span><select name="industry" required><option value="">Select industry</option><option>Technology / Software</option><option>Finance / Fintech</option><option>Healthcare</option><option>Education</option><option>Retail / E-commerce</option><option>Manufacturing</option><option>Media / Marketing</option><option>Consulting</option><option>Other</option></select></label>
+              <label>Company size <span>*</span><select name="companySize" required><option value="">Team size</option><option>1–10 employees</option><option>11–50 employees</option><option>51–200 employees</option><option>201–500 employees</option><option>501–1,000 employees</option><option>1,001–5,000 employees</option><option>5,000+ employees</option></select></label>
+              <label>Founded in<input name="founded" type="number" min="1800" max="2026" placeholder="e.g. 2020" /></label>
+            </div>
+            <label>Registered office address <span>*</span><input name="address" type="text" placeholder="Building, street and area" required /></label>
+            <div class="field-grid three">
+              <label>City <span>*</span><input name="city" type="text" placeholder="City" required /></label>
+              <label>State <span>*</span><input name="state" type="text" placeholder="State" required /></label>
+              <label>PIN / ZIP code <span>*</span><input name="postalCode" type="text" placeholder="Postal code" required /></label>
+            </div>
+            <div class="field-grid two">
+              <label>Corporate Identification No. (CIN)<input name="cin" type="text" placeholder="e.g. U72900MH2020PTC123456" /></label>
+              <label>GSTIN / Tax registration<input name="gstin" type="text" placeholder="e.g. 27ABCDE1234F1Z5" /></label>
+            </div>
+            <label>About the company <span>*</span><textarea name="companyAbout" maxlength="500" placeholder="Share your mission, product, culture and the kind of impact your team is creating…" required></textarea><small class="char-count"><span>0</span>/500</small></label>
+          </section>
+
+          <section class="form-step" data-step="3">
+            <div class="form-heading"><p class="section-kicker">Company verification</p><h2>Verify and submit.</h2><p>One last step to keep Careerly safe and trustworthy for candidates.</p></div>
+            <div class="verification-card"><div class="verification-icon">◆</div><div><h3>Why we verify employers</h3><p>Verification confirms your association with the business and helps prevent fraudulent job postings. Documents are used only for verification.</p></div></div>
+            <label>Verification document type <span>*</span><select name="documentType" required><option value="">Select a document</option><option>Certificate of Incorporation</option><option>GST Registration Certificate</option><option>Business Registration / License</option><option>Authorization letter on company letterhead</option><option>Recruitment agency license</option></select></label>
+            <label class="upload-zone" id="upload-zone"><input id="document-upload" name="document" type="file" accept=".pdf,.jpg,.jpeg,.png" required /><span class="upload-icon">⇧</span><strong>Upload verification document</strong><p>Drag and drop or <b>browse your device</b></p><small>PDF, JPG or PNG · Maximum 10 MB</small><div class="file-selected"><i>✓</i><span><b></b><small></small></span><button type="button" aria-label="Remove uploaded file">×</button></div></label>
+            <div class="review-card"><div class="review-title"><span>Company registration summary</span><button type="button" data-go-step="2">Edit details</button></div><div class="review-grid"><p><small>Authorized person</small><strong id="review-person">—</strong></p><p><small>Company</small><strong id="review-company">—</strong></p><p><small>Work email</small><strong id="review-email">—</strong></p></div></div>
+            <label class="consent"><input type="checkbox" name="authorization" required /><span></span><p>I confirm that I am legally authorized to create and manage an employer account on behalf of this company, and that the information provided is accurate.</p></label>
+            <label class="consent"><input type="checkbox" name="terms" required /><span></span><p>I agree to Careerly’s <a href="#">Employer Terms</a>, <a href="#">Privacy Policy</a>, and <a href="#">Job Posting Guidelines</a>.</p></label>
+          </section>
+
+          <div class="form-alert" role="alert" aria-live="polite"></div>
+          <div class="form-actions"><button class="back-button" id="back-button" type="button">← Back</button><p>Your progress is saved on this device</p><button class="next-button" id="next-button" type="button">Continue <span>→</span></button><button class="submit-button" id="submit-button" type="submit">Submit for verification <span>→</span></button></div>
+        </form>
+      </section>
+    </main>
+
+    <div class="success-modal" id="success-modal" role="dialog" aria-modal="true" aria-labelledby="success-title"><div class="success-card"><div class="success-check">✓</div><p>Registration submitted</p><h2 id="success-title">Your company is on its way to becoming verified.</h2><span>Our verification team will review your details within 1–2 business days. After signing in, use your employer dashboard to post jobs for candidates.</span><div class="success-reference"><small>Application reference</small><strong id="application-reference">CAR-EMP-000000</strong></div><a href="login.html?account=employer&amp;registered=1">Continue to employer sign in <b>→</b></a></div></div>
+    <script src="employer-registration.js"></script>
+  </body>
+</html>

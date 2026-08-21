@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Build and manage your complete Careerly candidate profile." />
+  <title>Candidate Profile - Careerly</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="candidate-profile.css" />
+</head>
+
+<body class="is-loading">
+  <header class="profile-header">
+    <nav class="profile-nav" aria-label="Candidate navigation">
+      <a class="brand" href="homepage.html" aria-label="Careerly homepage">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>careerly</span>
+      </a>
+      <div class="profile-nav-links">
+        <a href="homepage.html">Home</a>
+        <a href="homepage.html#featured">Find jobs</a>
+        <a href="candidate-applications.html">Applications</a>
+        <a class="active" href="candidate-profile.html" aria-current="page">My profile</a>
+      </div>
+      <div class="profile-nav-actions">
+        <span class="save-state" id="save-state">All changes saved</span>
+        <button class="avatar-button" id="account-menu" type="button" aria-label="Candidate account"><span id="nav-initials">CB</span><img id="nav-photo" alt="" hidden /></button>
+        <button class="sign-out" id="sign-out" type="button">Sign out</button>
+      </div>
+    </nav>
+  </header>
+
+  <div class="loading-screen" id="loading-screen" role="status">
+    <span class="loading-mark"><i></i><i></i><i></i></span>
+    <p>Preparing your profile...</p>
+  </div>
+
+  <section class="auth-wall" id="auth-wall" hidden>
+    <div class="auth-card">
+      <span class="auth-icon">C</span>
+      <p class="eyebrow">Candidate workspace</p>
+      <h1>Sign in to build your profile.</h1>
+      <p>Your profile information is private and saved securely to your Careerly candidate account.</p>
+      <a href="login.html?account=job_seeker">Sign in as a candidate <span aria-hidden="true">-&gt;</span></a>
+      <small>New to Careerly? <a href="candidate-registration.html">Create an account</a></small>
+    </div>
+  </section>
+
+  <main id="profile-app" hidden>
+    <section class="profile-hero">
+      <div class="hero-pattern" aria-hidden="true"></div>
+      <div class="hero-content">
+        <label class="hero-avatar" id="hero-avatar" for="profile-photo-input" title="Change profile photo">
+          <span id="hero-initials">CB</span><img id="hero-photo" alt="Your profile photo" hidden /><i aria-hidden="true"></i><b>Change photo</b>
+        </label>
+        <div class="hero-identity">
+          <div class="hero-label"><span></span>Candidate profile</div>
+          <h1 id="profile-name">Your name</h1>
+          <p class="hero-headline" id="profile-headline">Add a professional headline to introduce yourself.</p>
+          <div class="hero-meta">
+            <span id="profile-location">Add your location</span>
+            <span id="profile-status">Open to opportunities</span>
+          </div>
+        </div>
+        <div class="hero-actions">
+          <span class="visibility-pill" id="visibility-pill">Employers only</span>
+          <a class="outline-button" href="candidate-applications.html">View application status</a>
+          <button type="button" class="outline-button" data-scroll="basics">Edit introduction</button>
+        </div>
+      </div>
+    </section>
+
+    <div class="profile-layout">
+      <aside class="profile-sidebar">
+        <section class="completion-card">
+          <div class="completion-top">
+            <div class="completion-ring" id="completion-ring" style="--progress: 0deg">
+              <div><strong id="completion-value">0%</strong><span>complete</span></div>
+            </div>
+            <div>
+              <p class="eyebrow">Profile strength</p>
+              <h2 id="completion-title">Let us get started</h2>
+              <p id="completion-copy">Complete your details to stand out to recruiters.</p>
+            </div>
+          </div>
+          <div class="completion-list" id="completion-list" aria-label="Profile completion checklist"></div>
+        </section>
+
+        <nav class="section-nav" aria-label="Profile sections">
+          <p>Profile sections</p>
+          <a href="#basics" class="active"><span>01</span>Introduction</a>
+          <a href="#about"><span>02</span>About &amp; contact</a>
+          <a href="#experience"><span>03</span>Experience</a>
+          <a href="#education"><span>04</span>Education</a>
+          <a href="#skills"><span>05</span>Skills</a>
+          <a href="#resume"><span>06</span>Resume</a>
+          <a href="#preferences"><span>07</span>Job preferences</a>
+          <a href="#more"><span>08</span>Projects &amp; more</a>
+        </nav>
+      </aside>
+
+      <form class="profile-form" id="candidate-profile-form" novalidate>
+        <section class="profile-section" id="basics">
+          <div class="section-heading">
+            <div><span class="section-number">01</span><div><h2>Introduction</h2><p>The essentials recruiters notice first.</p></div></div>
+            <span class="section-weight">20% of profile</span>
+          </div>
+          <div class="field-grid two-column">
+            <div class="field full profile-photo-field"><span>Profile picture</span><div class="photo-update-control"><input id="profile-photo-input" name="profilePhoto" type="file" accept="image/jpeg,image/png,image/webp,.jpg,.jpeg,.png,.webp" /><button id="update-profile-photo" type="button">Update profile photo</button><b id="profile-photo-status">No profile photo saved</b></div><small>JPG, PNG, or WebP. Maximum 2 MB. Save your profile to keep the new photo.</small></div>
+            <label class="field"><span>First name <b>*</b></span><input name="firstName" autocomplete="given-name" maxlength="100" required /></label>
+            <label class="field"><span>Last name <b>*</b></span><input name="lastName" autocomplete="family-name" maxlength="100" required /></label>
+            <label class="field full"><span>Professional headline <b>*</b></span><input name="headline" maxlength="180" placeholder="e.g. Product designer crafting simple, human experiences" /><small>Keep it specific, confident, and under 180 characters.</small></label>
+            <label class="field"><span>Current job title</span><input name="currentJobTitle" maxlength="180" placeholder="e.g. Software Engineer" /></label>
+            <label class="field"><span>Current company</span><input name="currentCompany" maxlength="180" placeholder="e.g. Careerly" /></label>
+            <label class="field"><span>Total experience</span><select name="experienceYears"><option value="">Select experience</option><option value="0">Fresher / Student</option><option value="0.5">Less than 1 year</option><option value="1">1 year</option><option value="2">2 years</option><option value="3">3 years</option><option value="4">4 years</option><option value="5">5 years</option><option value="7">6-8 years</option><option value="10">9-12 years</option><option value="13">13+ years</option></select></label>
+            <label class="field"><span>Employment status</span><select name="employmentStatus"><option value="">Choose status</option><option>Student</option><option>Actively looking</option><option>Open to opportunities</option><option>Currently employed</option><option>Serving notice period</option><option>Freelancer</option></select></label>
+          </div>
+        </section>
+
+        <section class="profile-section" id="about">
+          <div class="section-heading">
+            <div><span class="section-number">02</span><div><h2>About &amp; contact</h2><p>Tell your professional story and how recruiters can reach you.</p></div></div>
+            <span class="section-weight">20% of profile</span>
+          </div>
+          <label class="field"><span>Professional summary <b>*</b></span><textarea name="professionalSummary" rows="6" maxlength="1200" placeholder="Share your strengths, experience, interests, and the impact you want to make..."></textarea><small><span id="summary-count">0</span>/1200 characters. Write at least 50 characters for profile completion.</small></label>
+          <div class="field-grid two-column">
+            <label class="field"><span>Phone number <b>*</b></span><input name="phone" type="tel" autocomplete="tel" maxlength="30" placeholder="+91 98765 43210" /></label>
+            <label class="field"><span>Email</span><input name="email" type="email" disabled /><small>Managed through your Careerly account.</small></label>
+            <label class="field"><span>City <b>*</b></span><input name="city" autocomplete="address-level2" maxlength="100" placeholder="Pune" /></label>
+            <label class="field"><span>State</span><input name="state" autocomplete="address-level1" maxlength="100" placeholder="Maharashtra" /></label>
+            <label class="field"><span>Country <b>*</b></span><input name="country" autocomplete="country-name" maxlength="100" placeholder="India" /></label>
+            <label class="field"><span>LinkedIn profile</span><input name="linkedinUrl" type="url" placeholder="https://linkedin.com/in/your-name" /></label>
+            <label class="field full"><span>Portfolio or personal website</span><input name="portfolioUrl" type="url" placeholder="https://yourportfolio.com" /></label>
+          </div>
+        </section>
+
+        <section class="profile-section" id="experience">
+          <div class="section-heading">
+            <div><span class="section-number">03</span><div><h2>Work experience</h2><p>Highlight responsibilities, achievements, internships, or freelance work.</p></div></div>
+            <button class="add-button" id="add-experience" type="button">+ Add experience</button>
+          </div>
+          <div class="repeater-list" id="experience-list"></div>
+          <div class="empty-state" id="experience-empty"><span>EX</span><div><h3>No experience added yet</h3><p>Add your latest role, internship, or relevant freelance work.</p></div><button type="button" data-add="experience">Add experience</button></div>
+        </section>
+
+        <section class="profile-section" id="education">
+          <div class="section-heading">
+            <div><span class="section-number">04</span><div><h2>Education</h2><p>Add degrees, diplomas, or relevant academic qualifications.</p></div></div>
+            <button class="add-button" id="add-education" type="button">+ Add education</button>
+          </div>
+          <div class="repeater-list" id="education-list"></div>
+          <div class="empty-state" id="education-empty"><span>ED</span><div><h3>Your education belongs here</h3><p>Add your highest or most relevant qualification.</p></div><button type="button" data-add="education">Add education</button></div>
+        </section>
+
+        <section class="profile-section" id="skills">
+          <div class="section-heading">
+            <div><span class="section-number">05</span><div><h2>Skills</h2><p>Add at least five skills so Careerly can improve your job matches.</p></div></div>
+            <span class="section-weight">10% of profile</span>
+          </div>
+          <label class="field"><span>Add a skill</span><div class="token-input"><input id="skill-input" placeholder="Type a skill and press Enter" maxlength="80" /><button id="add-skill" type="button">Add</button></div><small>Examples: JavaScript, Data Analysis, Figma, Project Management, Communication</small></label>
+          <div class="token-list" id="skill-list" aria-live="polite"></div>
+          <div class="suggested-row"><span>Popular skills</span><button type="button">Communication</button><button type="button">Problem Solving</button><button type="button">Microsoft Excel</button><button type="button">Teamwork</button><button type="button">Leadership</button></div>
+        </section>
+
+        <section class="profile-section resume-section" id="resume">
+          <div class="section-heading">
+            <div><span class="section-number">06</span><div><h2>Resume</h2><p>Recruiters can review your experience faster with an updated resume.</p></div></div>
+            <span class="section-weight">10% of profile</span>
+          </div>
+          <label class="resume-drop" id="resume-drop">
+            <input id="resume-input" name="resume" type="file" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
+            <span class="resume-icon">PDF</span>
+            <strong>Drop a new resume here or <u>browse files</u></strong>
+            <small>PDF, DOC, or DOCX - maximum 5 MB</small>
+          </label>
+          <div class="resume-file" id="resume-file" hidden><span class="file-type">CV</span><div><strong id="resume-name"></strong><small id="resume-meta"></small></div><button id="download-resume" type="button">Download</button><button id="replace-resume" type="button">Update resume</button></div>
+        </section>
+
+        <section class="profile-section" id="preferences">
+          <div class="section-heading">
+            <div><span class="section-number">07</span><div><h2>Job preferences</h2><p>Help us surface roles that fit your goals and working style.</p></div></div>
+            <span class="section-weight">5% of profile</span>
+          </div>
+          <div class="field-grid two-column">
+            <label class="field"><span>Preferred roles</span><input id="preferred-roles" placeholder="e.g. Frontend Developer, UI Engineer" /><small>Separate multiple roles with commas.</small></label>
+            <label class="field"><span>Preferred locations</span><input id="preferred-locations" placeholder="e.g. Pune, Bengaluru, Remote" /><small>Separate multiple locations with commas.</small></label>
+            <label class="field"><span>Expected salary</span><input name="salaryExpectation" placeholder="e.g. INR 8-10 LPA" /></label>
+            <label class="field"><span>Notice period</span><select name="noticePeriod"><option value="">Choose notice period</option><option>Immediately available</option><option>15 days</option><option>30 days</option><option>60 days</option><option>90 days</option><option>Currently studying</option></select></label>
+          </div>
+          <fieldset class="choice-group"><legend>Preferred work mode</legend><label><input type="checkbox" name="workModes" value="On-site" /><span>On-site<small>Work from the office</small></span></label><label><input type="checkbox" name="workModes" value="Hybrid" /><span>Hybrid<small>Office and remote</small></span></label><label><input type="checkbox" name="workModes" value="Remote" /><span>Remote<small>Work from anywhere</small></span></label></fieldset>
+        </section>
+
+        <section class="profile-section" id="more">
+          <div class="section-heading">
+            <div><span class="section-number">08</span><div><h2>Projects &amp; more</h2><p>Show the work, credentials, and languages that make you distinctive.</p></div></div>
+            <span class="section-weight">5% of profile</span>
+          </div>
+          <div class="subsection-heading"><div><h3>Projects</h3><p>Personal, academic, open-source, or professional work.</p></div><button class="add-button" id="add-project" type="button">+ Add project</button></div>
+          <div class="repeater-list compact" id="project-list"></div>
+          <div class="subsection-heading divided"><div><h3>Certifications</h3><p>Courses, licenses, and professional credentials.</p></div><button class="add-button" id="add-certification" type="button">+ Add certification</button></div>
+          <div class="repeater-list compact" id="certification-list"></div>
+          <div class="subsection-heading divided"><div><h3>Languages</h3><p>Languages you can communicate in.</p></div></div>
+          <label class="field"><span>Add a language</span><div class="token-input"><input id="language-input" placeholder="Type a language and press Enter" maxlength="60" /><button id="add-language" type="button">Add</button></div></label>
+          <div class="token-list" id="language-list"></div>
+        </section>
+
+        <section class="profile-section privacy-section">
+          <div class="section-heading">
+            <div><span class="section-number shield">P</span><div><h2>Profile visibility</h2><p>Choose who can discover your Careerly profile.</p></div></div>
+          </div>
+          <div class="visibility-options">
+            <label><input type="radio" name="profileVisibility" value="employers_only" checked /><span><b>Recruiters on Careerly</b><small>Recommended - verified employers can discover you.</small></span></label>
+            <label><input type="radio" name="profileVisibility" value="public" /><span><b>Public</b><small>Anyone with your future public profile link can view it.</small></span></label>
+            <label><input type="radio" name="profileVisibility" value="private" /><span><b>Private</b><small>Only you can view your profile.</small></span></label>
+          </div>
+        </section>
+
+        <div class="form-actions">
+          <p><span id="form-status-dot"></span><span id="form-status">Review your details, then save your profile.</span></p>
+          <button class="save-button" id="save-profile" type="submit"><span id="save-button-text">Save profile</span><b aria-hidden="true">-&gt;</b></button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <div class="toast" id="profile-toast" role="status" aria-live="polite"><span id="toast-icon">OK</span><div><strong id="toast-title">Profile saved</strong><p id="toast-copy">Your latest information is now on Careerly.</p></div></div>
+  <div class="completion-celebration" id="completion-celebration" hidden><div><span>100%</span><h2>Your profile is complete!</h2><p>You are ready to be discovered by great employers.</p><button type="button">Continue editing</button></div></div>
+
+  <script src="candidate-profile.js"></script>
+</body>
+
+</html>

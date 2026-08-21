@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Discover jobs, companies and career resources with Careerly." />
+  <title>Homepage — Careerly</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="home.css" />
+  <style>
+    .job-details-dialog{width:min(680px,calc(100% - 28px));border:0;border-radius:16px;padding:0;box-shadow:0 25px 80px rgba(34,23,51,.3)}.job-details-dialog::backdrop{background:rgba(31,22,43,.62)}.job-details-dialog form{position:relative;padding:34px}.job-details-dialog h2{font:800 28px Manrope;margin:7px 38px 6px 0;color:#34264b}.job-dialog-company{margin:0;color:#777582;font-size:13px}.job-dialog-meta{margin:18px 0;padding:10px 12px;border-radius:8px;background:#f5f1ef;color:#625b69;font-size:12px}.job-details-dialog section{margin-top:23px}.job-details-dialog h3{margin:0 0 8px;font:800 14px Manrope}.job-dialog-description{margin:0;white-space:pre-wrap;color:#625d69;line-height:1.65;font-size:13px}.job-dialog-skills{display:flex;flex-wrap:wrap;gap:7px;color:#77737f;font-size:12px}.job-dialog-skills span{padding:6px 9px;border-radius:6px;background:#f3eef5;color:#5c4775}.job-fit-confirmation{display:flex;gap:9px;align-items:flex-start;margin:28px 0 12px;color:#4a4452;font-size:13px;font-weight:700}.job-fit-confirmation input{margin-top:3px}.job-dialog-message{min-height:18px;margin:0;color:#a24e3c;font-size:12px}.job-dialog-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:14px}.job-dialog-actions button{border:0;border-radius:8px;padding:11px 14px;font-weight:800;cursor:pointer}.job-dialog-cancel{background:#f1edef;color:#635d6a}.job-dialog-apply{background:#db7758;color:#fff}.job-dialog-apply:disabled{background:#d7cbd0;color:#887d82;cursor:not-allowed}.job-dialog-close{position:absolute;right:18px;top:16px;border:0;background:#f2eef3;border-radius:50%;width:32px;height:32px;font-size:23px;cursor:pointer}@media(max-width:600px){.job-details-dialog form{padding:26px 21px}.job-details-dialog h2{font-size:23px}.job-dialog-actions{display:grid;grid-template-columns:1fr 1fr}}
+  </style>
+  <style>.job-card .view-job{position:absolute;right:82px;bottom:17px;border:1px solid #d8cedf;border-radius:7px;background:#fff;color:#4d3a62;padding:7px 10px;font:800 10px Manrope;cursor:pointer;z-index:2}.job-card .view-job:hover{background:#f5f0f7}.job-card .save-job{font:800 10px Manrope;color:#fff;background:#db7758;border-radius:7px;padding:8px 10px}.job-card .save-job:disabled{background:#9a909c}@media(max-width:600px){.job-card .view-job{right:87px;top:16px;bottom:auto}.job-card .save-job{right:15px;top:16px;bottom:auto}}</style>
+  <style>.company-card[role="link"]{cursor:pointer}.job-company-link{cursor:pointer;color:#c65338!important;background:#fff0e9;padding:3px 7px;border-radius:12px;font-weight:800;text-decoration:none;transition:.2s}.job-company-link:hover{color:#fff!important;background:#d9684c;box-shadow:0 3px 8px rgba(198,83,56,.2)}.company-details-dialog{width:min(710px,calc(100% - 28px));border:0;border-radius:16px;padding:0;box-shadow:0 25px 80px rgba(34,23,51,.3)}.company-details-dialog::backdrop{background:rgba(31,22,43,.62)}.company-details-dialog form{padding:30px;position:relative}.company-dialog-close{position:absolute;right:17px;top:17px;border:0;border-radius:50%;width:32px;height:32px;background:#f2eef3;font-size:23px;cursor:pointer}.company-dialog-hero{display:flex;gap:14px;align-items:center;padding:3px 37px 20px 0;border-bottom:1px solid #ece6e9}.company-dialog-avatar{width:52px;height:52px;border-radius:12px;display:grid;place-items:center;background:#4e4668;color:#fff;font:800 21px Manrope}.company-details-dialog h2{margin:3px 0;font:800 24px Manrope;color:#34264b}.company-dialog-meta{margin:0;color:#777582;font-size:12px}.company-details-dialog section{margin-top:21px}.company-details-dialog h3{margin:0 0 8px;font:800 14px Manrope}.company-dialog-description{margin:0;color:#625d69;white-space:pre-wrap;line-height:1.6;font-size:13px}.company-dialog-facts{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin-top:20px}.company-dialog-facts div{padding:10px;border-radius:8px;background:#f7f3f2}.company-dialog-facts small,.company-dialog-facts b{display:block}.company-dialog-facts small{color:#938b95;font-size:9px;text-transform:uppercase;letter-spacing:.8px}.company-dialog-facts b{margin-top:2px;font-size:12px;word-break:break-word}.company-dialog-jobs{display:grid;gap:8px}.company-dialog-job{border:1px solid #e6dfe5;border-radius:8px;background:#fff;padding:11px;text-align:left;cursor:pointer}.company-dialog-job:hover{border-color:#cbbbd5;background:#fcf9fd}.company-dialog-job b,.company-dialog-job span{display:block}.company-dialog-job b{font:700 13px Manrope}.company-dialog-job span,.company-dialog-empty{margin:3px 0 0;color:#817b87;font-size:11px}.company-dialog-empty{padding:8px 0}@media(max-width:600px){.company-details-dialog form{padding:24px 20px}.company-dialog-facts{grid-template-columns:1fr}}</style>
+</head>
+
+<body>
+  <header class="site-header" id="top">
+    <nav class="nav-wrap" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="Careerly home"><span class="brand-mark"
+          aria-hidden="true"><i></i><i></i><i></i></span><span>careerly</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-menu"
+        aria-label="Open navigation"><span></span><span></span><span></span></button>
+      <div class="nav-menu" id="nav-menu">
+        <div class="nav-links">
+          <div class="nav-group"><button class="nav-link dropdown-toggle" type="button">Find jobs
+              <span>⌄</span></button>
+            <div class="dropdown"><a href="#featured"><b>⌕</b><span>Search jobs<small>Explore roles from top
+                    employers</small></span></a><a href="#categories"><b>▦</b><span>Browse categories<small>Find work by
+                    specialty</small></span></a><a href="#companies"><b>◫</b><span>Explore companies<small>Meet your
+                    next workplace</small></span></a></div>
+          </div>
+          <a class="nav-link" href="#companies">Companies</a>
+          <a class="nav-link candidate-profile-link" href="candidate-profile.html">My profile</a>
+          <a class="nav-link" href="about.html">About us</a>
+          <div class="nav-group"><button class="nav-link dropdown-toggle" type="button">Career resources
+              <span>⌄</span></button>
+            <div class="dropdown resource-dropdown"><a href="#resources"><b>✦</b><span>Career toolkit<small>Practical
+                    guides and templates</small></span></a><a href="#resources"><b>⌁</b><span>Salary insights<small>Know
+                    what your skills are worth</small></span></a></div>
+          </div>
+        </div>
+        <div class="nav-actions"><a class="employer-link" href="employer-registration.html">For employers</a><a class="candidate-profile-action" id="candidate-profile-action" href="candidate-profile.html" hidden>Candidate profile <span>&rarr;</span></a><a class="sign-in" id="sign-in-link"
+            href="login.html">Sign in</a><a class="join-button" href="candidate-registration.html">Join Careerly <span>→</span></a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-grid"></div>
+      <div class="hero-orb hero-orb-one"></div>
+      <div class="hero-orb hero-orb-two"></div>
+      <div class="hero-inner">
+        <div class="hero-copy reveal">
+          <div class="eyebrow"><span></span> More than a job board</div>
+          <h1>Your career should<br />feel like <em>yours.</em></h1>
+          <p>Discover work that fits your ambition, values, and life — with tools designed to help you move forward
+            confidently.</p>
+        </div>
+        <form class="job-search reveal" id="job-search" role="search">
+          <label class="search-field"><span class="field-icon">⌕</span><span><small>What</small><input id="role-input"
+                type="search" placeholder="Job title, skill or company" /></span></label><i></i>
+          <label class="search-field"><span class="field-icon pin">●</span><span><small>Where</small><input
+                id="location-input" type="search" placeholder="City, state or remote" /></span></label>
+          <button type="submit">Search jobs <span>→</span></button>
+        </form>
+        <div class="popular-searches reveal"><span>Popular:</span><button>Product designer</button><button>Data
+            analyst</button><button>Remote</button><button>Marketing</button></div>
+        <div class="hero-proof reveal">
+          <div class="proof-item"><strong><span data-count="48">0</span>k+</strong><small>live opportunities</small>
+          </div>
+          <div class="proof-line"></div>
+          <div class="proof-item"><strong><span data-count="12">0</span>k+</strong><small>trusted companies</small>
+          </div>
+          <div class="proof-line"></div>
+          <div class="proof-item"><strong><span data-count="91">0</span>%</strong><small>would recommend us</small>
+          </div>
+          <div class="member-proof">
+            <div class="avatars"><b>AK</b><b>MS</b><b>JD</b><b>+</b></div><span>Join <strong>500k+</strong>
+              professionals</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="logo-strip" aria-label="Companies hiring on Careerly">
+      <p>Trusted by teams building what’s next</p>
+      <div class="logo-row"><span><b>◇</b> notion</span><span><b>⌁</b> ripple</span><span><b>✣</b>
+          vercel</span><span><b>◈</b> linear</span><span><b>✦</b> webflow</span><span><b>○</b> loom</span></div>
+    </section>
+
+    <section class="section categories" id="categories">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-kicker">Explore your path</p>
+          <h2>Opportunities for every ambition.</h2>
+        </div><a href="#featured">View all categories <span>→</span></a>
+      </div>
+      <div class="category-grid">
+        <a class="category-card reveal" href="#featured"><span class="category-icon purple">⌘</span>
+          <div>
+            <h3>Design &amp; Creative</h3>
+            <p>2,481 open positions</p>
+          </div><b>↗</b>
+        </a><a class="category-card reveal" href="#featured"><span class="category-icon coral">&lt;/&gt;</span>
+          <div>
+            <h3>Engineering</h3>
+            <p>5,904 open positions</p>
+          </div><b>↗</b>
+        </a>
+        <a class="category-card reveal" href="#featured"><span class="category-icon gold">⌁</span>
+          <div>
+            <h3>Data &amp; Analytics</h3>
+            <p>1,726 open positions</p>
+          </div><b>↗</b>
+        </a><a class="category-card reveal" href="#featured"><span class="category-icon green">◎</span>
+          <div>
+            <h3>Marketing</h3>
+            <p>1,318 open positions</p>
+          </div><b>↗</b>
+        </a>
+        <a class="category-card reveal" href="#featured"><span class="category-icon blue">♙</span>
+          <div>
+            <h3>Sales</h3>
+            <p>3,112 open positions</p>
+          </div><b>↗</b>
+        </a><a class="category-card reveal" href="#featured"><span class="category-icon pink">☻</span>
+          <div>
+            <h3>People &amp; Culture</h3>
+            <p>894 open positions</p>
+          </div><b>↗</b>
+        </a>
+        <a class="category-card reveal" href="#featured"><span class="category-icon navy">▣</span>
+          <div>
+            <h3>Finance</h3>
+            <p>1,506 open positions</p>
+          </div><b>↗</b>
+        </a><a class="category-card reveal" href="#featured"><span class="category-icon orange">✦</span>
+          <div>
+            <h3>Customer Success</h3>
+            <p>1,097 open positions</p>
+          </div><b>↗</b>
+        </a>
+        <a class="category-card reveal" href="#featured" data-search="Software"><span class="category-icon purple">IT</span><div><h3>IT &amp; Software</h3><p>Development, cloud and support</p></div><b>↗</b></a>
+        <a class="category-card reveal" href="#featured" data-search="Civil"><span class="category-icon coral">CE</span><div><h3>Civil Engineering</h3><p>Construction and infrastructure</p></div><b>↗</b></a>
+        <a class="category-card reveal" href="#featured" data-search="Electrical"><span class="category-icon gold">EE</span><div><h3>Electrical &amp; Electronics</h3><p>Power, controls and electronics</p></div><b>↗</b></a>
+        <a class="category-card reveal" href="#featured" data-search="Mechanical"><span class="category-icon green">ME</span><div><h3>Mechanical Engineering</h3><p>Design, production and maintenance</p></div><b>↗</b></a>
+        <a class="category-card reveal" href="#featured" data-search="Construction"><span class="category-icon blue">AC</span><div><h3>Architecture &amp; Construction</h3><p>Planning, design and site roles</p></div><b>↗</b></a>
+        <a class="category-card reveal" href="#featured" data-search="Healthcare"><span class="category-icon pink">HC</span><div><h3>Healthcare &amp; Pharma</h3><p>Clinical, pharmacy and life sciences</p></div><b>↗</b></a>
+        <a class="category-card reveal" href="#featured" data-search="Education"><span class="category-icon navy">ED</span><div><h3>Education &amp; Training</h3><p>Teaching, research and learning</p></div><b>↗</b></a>
+        <a class="category-card reveal" href="#featured" data-search="Operations"><span class="category-icon orange">SC</span><div><h3>Operations &amp; Supply Chain</h3><p>Procurement, logistics and quality</p></div><b>↗</b></a>
+        <a class="category-card reveal" href="#featured" data-search="Manufacturing"><span class="category-icon purple">MF</span><div><h3>Manufacturing &amp; Production</h3><p>Plant, process and quality roles</p></div><b>↗</b></a>
+        <a class="category-card reveal" href="#featured" data-search="Banking"><span class="category-icon coral">BK</span><div><h3>Banking &amp; Insurance</h3><p>Banking, risk and insurance</p></div><b>↗</b></a>
+        <a class="category-card reveal" href="#featured" data-search="Legal"><span class="category-icon gold">LC</span><div><h3>Legal &amp; Compliance</h3><p>Legal, policy and compliance</p></div><b>↗</b></a>
+        <a class="category-card reveal" href="#featured" data-search="Hospitality"><span class="category-icon green">HT</span><div><h3>Hospitality &amp; Travel</h3><p>Hotels, tourism and aviation</p></div><b>↗</b></a>
+      </div>
+    </section>
+
+    <section class="section featured" id="featured">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-kicker">Hand-picked for you</p>
+          <h2>Featured opportunities.</h2>
+          <p class="heading-copy">Fresh roles from companies that care about where you’re going.</p>
+        </div>
+        <div class="job-tabs" role="tablist"><button class="active" data-filter="all">All jobs</button><button
+            data-filter="remote">Remote</button><button data-filter="fulltime">Full-time</button></div>
+      </div>
+      <div class="jobs-layout">
+        <div class="job-list" id="job-list">
+          <article class="job-card reveal" data-tags="remote fulltime"><button class="save-job"
+              aria-label="Save Senior Product Designer job">♡</button>
+            <div class="company-logo figma">F</div>
+            <div class="job-info">
+              <div class="job-topline"><span>Figma</span><i>Featured</i></div>
+              <h3>Senior Product Designer</h3>
+              <p>San Francisco, CA · Remote friendly</p>
+              <div class="job-meta"><span>Full-time</span><span>$145k–$180k</span><span>Design</span></div>
+            </div>
+            <div class="job-time">2h ago <b>→</b></div>
+          </article>
+          <article class="job-card reveal" data-tags="remote fulltime"><button class="save-job"
+              aria-label="Save Staff Software Engineer job">♡</button>
+            <div class="company-logo linear">L</div>
+            <div class="job-info">
+              <div class="job-topline"><span>Linear</span></div>
+              <h3>Staff Software Engineer</h3>
+              <p>Remote · Americas &amp; Europe</p>
+              <div class="job-meta"><span>Full-time</span><span>$170k–$220k</span><span>Engineering</span></div>
+            </div>
+            <div class="job-time">5h ago <b>→</b></div>
+          </article>
+          <article class="job-card reveal" data-tags="fulltime"><button class="save-job"
+              aria-label="Save Growth Marketing Lead job">♡</button>
+            <div class="company-logo notion">N</div>
+            <div class="job-info">
+              <div class="job-topline"><span>Notion</span><i>New</i></div>
+              <h3>Growth Marketing Lead</h3>
+              <p>New York, NY · Hybrid</p>
+              <div class="job-meta"><span>Full-time</span><span>$130k–$165k</span><span>Marketing</span></div>
+            </div>
+            <div class="job-time">1d ago <b>→</b></div>
+          </article>
+          <article class="job-card reveal" data-tags="remote"><button class="save-job"
+              aria-label="Save Senior Data Analyst job">♡</button>
+            <div class="company-logo stripe">S</div>
+            <div class="job-info">
+              <div class="job-topline"><span>Stripe</span></div>
+              <h3>Senior Data Analyst</h3>
+              <p>Bengaluru, India · Remote friendly</p>
+              <div class="job-meta"><span>Contract</span><span>Competitive</span><span>Data</span></div>
+            </div>
+            <div class="job-time">2d ago <b>→</b></div>
+          </article>
+          <a class="view-all-mobile" href="#">View all 48,294 jobs <span>→</span></a>
+        </div>
+        <aside class="profile-card reveal">
+          <div class="profile-art"><span class="profile-dot d1"></span><span class="profile-dot d2"></span><span
+              class="profile-avatar">You</span><i class="match-badge">92% match</i></div>
+          <div class="profile-content"><span class="mini-kicker">Your Careerly profile</span>
+            <h3>Let great roles find you.</h3>
+            <p>Complete your profile and get matched with opportunities that fit your skills and goals.</p>
+            <div class="progress-label"><span>Profile strength</span><strong id="home-profile-percentage">0%</strong></div>
+            <div class="progress"><i id="home-profile-progress"></i></div><a id="home-profile-link" href="candidate-profile.html">Build your profile <span>→</span></a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="company-section" id="companies">
+      <div class="section company-inner">
+        <div class="section-heading light reveal">
+          <div>
+            <p class="section-kicker">Go beyond the job description</p>
+            <h2>Meet companies where<br />you can do your best work.</h2>
+          </div><a href="#">Explore all companies <span>→</span></a>
+        </div>
+        <div class="company-cards" id="company-cards" aria-live="polite">
+          <article class="company-card reveal">
+            <div class="company-cover cover-one"><span>MAKE<br />SPACE<br />TO GROW</span>
+              <div class="cover-shape"></div>
+            </div>
+            <div class="company-body">
+              <div class="company-title"><span class="company-logo notion">N</span>
+                <div>
+                  <h3>Notion</h3>
+                  <p>Productivity · 500–1,000</p>
+                </div><b>48 jobs</b>
+              </div>
+              <p>Tools that make space for better thinking and more meaningful work.</p>
+              <div class="values"><span>Remote friendly</span><span>Learning budget</span></div>
+            </div>
+          </article>
+          <article class="company-card reveal">
+            <div class="company-cover cover-two">
+              <div class="orbit o1"></div>
+              <div class="orbit o2"></div><strong>build<br />the flow.</strong>
+            </div>
+            <div class="company-body">
+              <div class="company-title"><span class="company-logo webflow">W</span>
+                <div>
+                  <h3>Webflow</h3>
+                  <p>Design tools · 500–1,000</p>
+                </div><b>31 jobs</b>
+              </div>
+              <p>Empowering everyone to build the world’s most meaningful experiences.</p>
+              <div class="values"><span>Flexible hours</span><span>Global team</span></div>
+            </div>
+          </article>
+          <article class="company-card reveal">
+            <div class="company-cover cover-three">
+              <div class="people-shapes"><i></i><i></i><i></i></div><strong>work<br />in progress</strong>
+            </div>
+            <div class="company-body">
+              <div class="company-title"><span class="company-logo loom">L</span>
+                <div>
+                  <h3>Loom</h3>
+                  <p>Communication · 200–500</p>
+                </div><b>24 jobs</b>
+              </div>
+              <p>Helping teams communicate with less friction and more human connection.</p>
+              <div class="values"><span>Remote first</span><span>Wellness perks</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section resources" id="resources">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-kicker">Grow with confidence</p>
+          <h2>Your career toolkit.</h2>
+          <p class="heading-copy">Expert resources for every stage of the journey.</p>
+        </div><a href="#">Explore all resources <span>→</span></a>
+      </div>
+      <div class="resource-grid">
+        <article class="resource-card featured-resource reveal">
+          <div class="resource-visual resume-visual"><span class="paper"><i></i><i></i><i></i><b>✓</b></span><span
+              class="spark s1">✦</span><span class="spark s2">✦</span></div>
+          <div><span class="resource-tag">Career guide · 8 min read</span>
+            <h3>Build a résumé that tells your story — and gets read.</h3>
+            <p>Practical advice for turning your experience into a clear, compelling narrative.</p><a href="#">Read the
+              guide <span>→</span></a>
+          </div>
+        </article>
+        <article class="resource-card reveal">
+          <div class="resource-visual salary-visual">
+            <div class="bars"><i></i><i></i><i></i><i></i></div><span>$</span>
+          </div>
+          <div><span class="resource-tag">Salary insights</span>
+            <h3>Know your worth before the conversation starts.</h3><a href="#">Explore salaries <span>→</span></a>
+          </div>
+        </article>
+        <article class="resource-card reveal">
+          <div class="resource-visual interview-visual"><span>“</span>
+            <div class="bubble b1"></div>
+            <div class="bubble b2"></div>
+          </div>
+          <div><span class="resource-tag">Interview prep</span>
+            <h3>Walk into your next interview ready.</h3><a href="#">Start preparing <span>→</span></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="employer-cta" id="employers">
+      <div class="cta-orb"></div>
+      <div class="cta-grid"></div>
+      <div class="cta-copy reveal">
+        <p class="section-kicker">For employers</p>
+        <h2>Great teams start<br />with the right people.</h2>
+        <p>Reach thoughtful, motivated professionals who are ready to make an impact.</p>
+        <div><a class="cta-primary" href="employer-registration.html">Post a job <span>→</span></a><a class="cta-secondary" href="employer-registration.html">Explore
+            hiring solutions</a></div>
+      </div>
+      <div class="talent-stack reveal">
+        <div class="talent-card tc1"><span class="talent-avatar ta1">AM</span>
+          <div><b>Product Design</b><small>8 years experience</small></div><i>Available</i>
+        </div>
+        <div class="talent-card tc2"><span class="talent-avatar ta2">RK</span>
+          <div><b>Engineering</b><small>Full-stack · React</small></div><i>Top match</i>
+        </div>
+        <div class="talent-card tc3"><span class="talent-avatar ta3">SL</span>
+          <div><b>Growth Marketing</b><small>B2B · SaaS</small></div><i>Open to work</i>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter section reveal">
+      <div><span class="newsletter-icon">✦</span>
+        <div>
+          <h2>Good opportunities, thoughtfully delivered.</h2>
+          <p>Get curated jobs and career insights in your inbox every Tuesday.</p>
+        </div>
+      </div>
+      <form id="newsletter-form"><label><span class="sr-only">Email address</span><input type="email"
+            placeholder="Enter your email address" required /></label><button type="submit">Join the newsletter
+          <span>→</span></button></form>
+      <p class="newsletter-status" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-main section">
+      <div class="footer-brand"><a class="brand" href="#top"><span
+            class="brand-mark"><i></i><i></i><i></i></span><span>careerly</span></a>
+        <p>Work worth waking up for.</p>
+        <div class="social-links"><a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="X">𝕏</a><a href="#"
+            aria-label="Instagram">◎</a></div>
+      </div>
+      <div class="footer-links">
+        <div>
+          <h3>For candidates</h3><a href="candidate-profile.html">My profile</a><a href="#featured">Browse jobs</a><a href="#companies">Explore companies</a><a
+            href="#resources">Salary insights</a><a href="#resources">Career resources</a>
+        </div>
+        <div>
+          <h3>For employers</h3><a href="employer-registration.html">Post a job</a><a href="employer-registration.html">Hiring solutions</a><a
+            href="#">Pricing</a><a href="#">Employer resources</a>
+        </div>
+        <div>
+          <h3>Careerly</h3><a href="about.html">About us</a><a href="about.html#values">Our values</a><a href="about.html#careers">Careers</a><a
+            href="about.html#contact">Contact</a>
+        </div>
+        <div>
+          <h3>Support</h3><a href="#">Help center</a><a href="#">Privacy</a><a href="#">Terms</a><a
+            href="#">Accessibility</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom section"><span>© 2026 Careerly, Inc.</span>
+      <p>Made with care for meaningful careers.</p><button id="back-top" aria-label="Back to top">↑</button>
+    </div>
+  </footer>
+  <div class="toast" role="status" aria-live="polite"><span>✓</span>
+    <p><b>Job saved</b><small>Find it anytime in your saved jobs.</small></p>
+  </div>
+  <script src="home.js"></script>
+</body>
+
+</html>

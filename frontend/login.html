@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Sign in to your Careerly job portal account." />
+    <title>Welcome back — Careerly</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="login-role.css" />
+  </head>
+  <body>
+    <main class="page-shell login-page">
+      <section class="story-panel" aria-label="Careerly introduction">
+        <a class="brand brand-link" href="homepage.html" aria-label="Careerly home">
+          <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span>careerly</span>
+        </a>
+
+        <div class="story-content">
+          <p class="eyebrow"><span></span> Welcome back to your journey</p>
+          <h1>Good things<br />are <em>waiting.</em></h1>
+          <p class="story-copy">Pick up where you left off and discover opportunities made for you.</p>
+          <div class="login-benefits" aria-label="Careerly benefits">
+            <div><span aria-hidden="true">✓</span><p><strong>Personalized job matches</strong><small>Curated around your goals and skills</small></p></div>
+            <div><span aria-hidden="true">✓</span><p><strong>Applications in one place</strong><small>Stay organized at every step</small></p></div>
+          </div>
+        </div>
+
+        <div class="quote-wrap">
+          <div class="quote-mark">“</div>
+          <blockquote>The right opportunity can change everything. Keep going.</blockquote>
+          <p><strong>The Careerly team</strong> · Rooting for your next move</p>
+        </div>
+        <div class="orb orb-one"></div><div class="orb orb-two"></div><div class="grid-lines"></div>
+      </section>
+
+      <section class="form-panel login-form-panel">
+        <div class="top-login">New to Careerly? <a id="signup-link" href="candidate-registration.html"><span id="signup-link-text">Create an account</span> <b>→</b></a></div>
+        <div class="form-container login-container">
+          <div class="welcome-icon" aria-hidden="true"><span>✦</span></div>
+          <div class="account-type-section">
+            <p>I’m signing in as</p>
+            <div class="account-type-selector" role="radiogroup" aria-label="Choose account type">
+              <button class="account-type-card active" type="button" role="radio" aria-checked="true" data-account-type="job_seeker">
+                <span class="account-type-icon seeker-icon">♙</span><span><strong>Job seeker</strong><small>Find jobs and manage applications</small></span><i>✓</i>
+              </button>
+              <button class="account-type-card" type="button" role="radio" aria-checked="false" data-account-type="employer">
+                <span class="account-type-icon employer-icon">▣</span><span><strong>Recruiter / Employer</strong><small>Hire talent and manage job posts</small></span><i>✓</i>
+              </button>
+            </div>
+            <p class="role-signup-prompt">Don’t have this account yet? <a id="role-signup-link" href="candidate-registration.html">Create your job seeker account →</a></p>
+          </div>
+          <div class="title-row">
+            <div>
+              <p class="section-kicker" id="login-kicker">Welcome back</p>
+              <h2 id="login-title">Sign in to Careerly</h2>
+              <p class="subheading" id="login-subheading">Your next opportunity could be one click away.</p>
+            </div>
+          </div>
+
+          <div class="social-buttons login-socials">
+            <button type="button" class="social google"><b>G</b> <span id="google-label">Continue with Google</span></button>
+            <button type="button" class="social"><b class="linkedin" id="second-social-icon">in</b> <span id="second-social-label">Continue with LinkedIn</span></button>
+          </div>
+          <div class="divider"><span>or sign in with email</span></div>
+
+          <form id="login-form" novalidate>
+            <label>Email address<input type="email" name="email" placeholder="you@example.com" autocomplete="email" required /></label>
+            <label class="password-label">Password
+              <span class="input-wrap"><input id="login-password" type="password" name="password" placeholder="Enter your password" autocomplete="current-password" required /><button class="reveal" type="button" aria-label="Show password">Show</button></span>
+            </label>
+            <div class="form-options">
+              <label class="check-row remember"><input type="checkbox" name="remember" /><span class="custom-check"></span><span>Keep me signed in</span></label>
+              <a class="forgot-link" href="#forgot-password">Forgot password?</a>
+            </div>
+            <p class="form-message" role="status" aria-live="polite"></p>
+            <button class="continue" type="submit"><span id="signin-button-text">Sign in to Careerly</span> <b>→</b></button>
+          </form>
+
+          <div class="secure-note"><span aria-hidden="true">◆</span> Your information is securely encrypted</div>
+          <p class="help-text">Having trouble signing in? <a href="mailto:hello@careerly.com">Contact support</a></p>
+        </div>
+      </section>
+    </main>
+    <script src="login.js"></script>
+  </body>
+</html>

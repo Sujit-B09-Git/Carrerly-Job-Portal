@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Track your Careerly job applications." />
+  <title>My Applications - Careerly</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="candidate-applications.css" />
+</head>
+<body>
+  <header>
+    <nav aria-label="Candidate navigation">
+      <a class="brand" href="homepage.html"><span aria-hidden="true">&#10022;</span>careerly</a>
+      <div class="nav-links">
+        <a href="homepage.html">Home</a>
+        <a href="homepage.html#featured">Find jobs</a>
+        <a class="active" href="candidate-applications.html" aria-current="page">Applications</a>
+        <a href="candidate-profile.html">My profile</a>
+      </div>
+      <button id="sign-out" type="button">Sign out</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-heading">
+      <div><p class="eyebrow">Candidate workspace</p><h1>Track your applications.</h1><p>Follow every opportunity from application to final decision.</p></div>
+      <a href="homepage.html#featured">Find more jobs &rarr;</a>
+    </section>
+
+    <section class="summary" aria-label="Application summary">
+      <article><span>All applications</span><strong id="total-count">0</strong><small>Your submitted opportunities</small></article>
+      <article><span>In progress</span><strong id="progress-count">0</strong><small>Viewed, shortlisted or interviewing</small></article>
+      <article><span>Positive outcomes</span><strong id="success-count">0</strong><small>Offers and accepted applications</small></article>
+    </section>
+
+    <section class="tracker-panel">
+      <div class="panel-head">
+        <div><p class="eyebrow">Application pipeline</p><h2>Your opportunities</h2></div>
+        <select id="status-filter" aria-label="Filter applications">
+          <option value="all">All statuses</option><option value="submitted">Submitted</option><option value="viewed">Viewed</option>
+          <option value="shortlisted">Shortlisted</option><option value="interview">Interview</option><option value="offered">Offered</option>
+          <option value="hired">Accepted</option><option value="rejected">Rejected</option>
+        </select>
+      </div>
+      <p class="load-state" id="load-state" role="status">Loading your applications&hellip;</p>
+      <div class="application-cards" id="application-cards"></div>
+    </section>
+  </main>
+  <script src="candidate-applications.js"></script>
+</body>
+</html>

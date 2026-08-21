@@ -1,0 +1,12 @@
+.password-match-message {
+  display: block;
+  min-height: 13px;
+  margin-top: 6px;
+  color: #b9442e;
+  font-size: 8px;
+  font-weight: 600;
+}
+
+.password-match-message.matched {
+  color: #4f8d77;
+}

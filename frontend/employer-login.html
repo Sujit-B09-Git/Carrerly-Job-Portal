@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Sign in to Careerly for Employers to manage jobs, candidates, and hiring activity." />
+    <title>Employer sign in — Careerly</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="employer-login.css" />
+  </head>
+  <body>
+    <header class="employer-header">
+      <a class="brand" href="homepage.html" aria-label="Careerly homepage"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>careerly</span><b>for employers</b></a>
+      <div><span>New to Careerly?</span><a href="employer-registration.html">Register your company <b>→</b></a></div>
+    </header>
+
+    <main class="login-shell">
+      <section class="employer-story" aria-label="Careerly employer platform">
+        <div class="story-grid"></div><div class="story-orb orb-one"></div><div class="story-orb orb-two"></div>
+        <div class="story-content">
+          <p class="eyebrow"><span></span> Your hiring workspace</p>
+          <h1>Great teams don’t<br />happen by <em>accident.</em></h1>
+          <p>Sign in to manage your jobs, connect with qualified candidates, and keep every hiring conversation moving.</p>
+          <div class="employer-benefits">
+            <div><span>✓</span><p><strong>One clear hiring pipeline</strong><small>Track applicants from first look to final offer.</small></p></div>
+            <div><span>✓</span><p><strong>Smarter candidate matches</strong><small>Discover people aligned with your role and culture.</small></p></div>
+            <div><span>✓</span><p><strong>Insights that improve hiring</strong><small>Understand reach, response, and team performance.</small></p></div>
+          </div>
+        </div>
+
+        <div class="dashboard-preview" aria-hidden="true">
+          <div class="preview-head"><div><i></i><i></i><i></i></div><span>Hiring overview</span><b>•••</b></div>
+          <div class="preview-body"><div class="metric"><small>Active roles</small><strong>12</strong><span>+3 this month</span></div><div class="metric"><small>New applicants</small><strong>148</strong><span>+18% this week</span></div><div class="candidate-row"><i class="candidate-avatar c1">AM</i><p><b>Product Designer</b><small>92% profile match</small></p><span>Review</span></div><div class="candidate-row"><i class="candidate-avatar c2">RK</i><p><b>Frontend Engineer</b><small>88% profile match</small></p><span>Review</span></div></div>
+        </div>
+
+        <div class="story-footer"><span>Trusted by 12,000+ hiring teams</span><div><b>◇ notion</b><b>◈ linear</b><b>✦ webflow</b></div></div>
+      </section>
+
+      <section class="login-panel">
+        <div class="login-card">
+          <div class="welcome-icon">✦</div>
+          <p class="section-kicker">Welcome back</p>
+          <h2>Sign in to your employer account</h2>
+          <p class="login-intro">Continue to your Careerly hiring workspace.</p>
+
+          <div class="sso-buttons">
+            <button type="button" data-provider="Google"><b class="google">G</b><span>Continue with Google Workspace</span></button>
+            <button type="button" data-provider="Microsoft"><b class="microsoft"><i></i><i></i><i></i><i></i></b><span>Continue with Microsoft</span></button>
+          </div>
+
+          <div class="divider"><span>or sign in with work email</span></div>
+
+          <form id="employer-login-form" novalidate>
+            <label>Work email address <span>*</span><input id="work-email" name="email" type="email" placeholder="you@company.com" autocomplete="email" required /><small>Use the email connected to your verified company.</small></label>
+            <label>Password <span>*</span><div class="password-field"><input id="employer-login-password" name="password" type="password" placeholder="Enter your password" autocomplete="current-password" required /><button id="reveal-password" type="button" aria-label="Show password">Show</button></div></label>
+
+            <div class="login-options"><label class="remember"><input type="checkbox" name="remember" /><span></span><p>Keep me signed in on this device</p></label><a href="#forgot-password" id="forgot-link">Forgot password?</a></div>
+
+            <p class="login-message" role="alert" aria-live="polite"></p>
+            <button class="sign-in-button" type="submit">Sign in to employer portal <span>→</span></button>
+          </form>
+
+          <div class="account-help"><span>◆</span><p><strong>Company not verified yet?</strong><small>Check your application status or complete verification.</small></p><a href="employer-registration.html">Continue setup →</a></div>
+          <p class="support-text">Need help accessing your account? <a href="mailto:hello@careerly.com">Contact employer support</a></p>
+          <div class="secure-signin"><span>●</span> Encrypted and protected employer sign-in</div>
+        </div>
+      </section>
+    </main>
+
+    <div class="notice" role="status" aria-live="polite"><span>✓</span><p><b></b><small></small></p></div>
+    <div class="reset-modal" id="reset-modal" role="dialog" aria-modal="true" aria-labelledby="reset-title"><div class="reset-card"><button class="close-reset" type="button" aria-label="Close">×</button><div class="reset-icon">↻</div><h2 id="reset-title">Reset your password</h2><p>Enter your work email and we’ll send secure reset instructions.</p><form id="reset-form"><label>Work email<input type="email" placeholder="you@company.com" required /></label><button type="submit">Send reset link <span>→</span></button></form><small>For account security, reset links expire after 30 minutes.</small></div></div>
+    <script src="employer-login.js"></script>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+.role-signup-prompt {
+  margin: 10px 0 0 !important;
+  color: #8a8792 !important;
+  font-size: 8px !important;
+  font-weight: 400 !important;
+}
+
+.role-signup-prompt a {
+  color: #d75d43;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.role-signup-prompt a:hover {
+  text-decoration: underline;
+}

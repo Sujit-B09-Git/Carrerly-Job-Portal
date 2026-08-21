@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Employer Workspace - Careerly</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="employer-dashboard.css" />
+    <link rel="stylesheet" href="employer-company-profile.css" />
+    <style>.candidate-view{width:min(780px,calc(100% - 28px));max-height:90vh;border:0;border-radius:16px;padding:0;box-shadow:0 25px 80px rgba(34,23,51,.3)}.candidate-view::backdrop{background:rgba(31,22,43,.62)}.candidate-view form{padding:30px}.candidate-head{display:flex;gap:15px;align-items:center;padding-right:42px}.candidate-avatar{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:#eee7f4;color:#49345f;font:800 18px Manrope}.candidate-head h2{margin:0}.candidate-head p{margin:3px 0 0;color:#777287}.candidate-contact{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}.candidate-contact span{padding:7px 9px;border-radius:6px;background:#f5f1f3;color:#655e69;font-size:11px}.candidate-section{margin-top:22px}.candidate-section h3{font:800 13px Manrope;margin:0 0 8px}.candidate-section p{color:#625d68;line-height:1.6;white-space:pre-wrap}.candidate-tags{display:flex;flex-wrap:wrap;gap:6px}.candidate-tags span{padding:6px 8px;border-radius:6px;background:#eee9f4;color:#59416f;font-size:10px;font-weight:700}.candidate-history{display:grid;gap:8px}.candidate-history article{border-left:3px solid #d8c8e2;padding:6px 10px;background:#fcfafc}.candidate-history b,.candidate-history small{display:block}.candidate-history small{color:#847d88;margin-top:2px}.candidate-view-actions{display:flex;justify-content:flex-end;gap:9px;margin-top:25px}.candidate-view-actions button{border:0;border-radius:8px;padding:11px 13px;cursor:pointer;font-weight:800}.download-resume{background:#42315f;color:#fff}.view-profile{border:1px solid #d8cde0!important;background:#f7f3f8!important;color:#4b3761!important;padding:7px 9px!important;margin:0!important}@media(max-width:600px){.candidate-view form{padding:23px 18px}.candidate-view-actions{display:grid;grid-template-columns:1fr 1fr}}</style>
+</head>
+
+<body>
+    <aside class="sidebar"><a class="brand" href="homepage.html"><span class="brand-dot">✦</span>careerly <small>employer</small></a>
+        <p class="workspace-label">WORKSPACE</p><nav><a class="active" href="#overview"><span>▦</span>Overview</a><a href="#vacancies"><span>◫</span>Jobs</a><a
+                href="#applications"><span>◉</span>Applications</a><a href="#company"><span>◇</span>Company</a></nav><div class="sidebar-support"><b>Need a hand?</b><span>Read employer guides and get support.</span><a href="mailto:hello@careerly.com">Contact support →</a></div><button id="sign-out"
+            type="button">Sign out</button>
+    </aside>
+    <main>
+        <header>
+            <div>
+                <p class="eyebrow">Employer workspace</p>
+                <h1 id="welcome">Welcome back</h1>
+                <p id="company-line">Loading your company...</p>
+            </div><div class="header-actions"><button class="company-profile-button" id="company-profile-button" type="button" aria-label="Open company profile"><span class="company-profile-avatar"><b id="header-company-initial">C</b><img id="header-company-logo" alt="" hidden /></span><span><small>Company profile</small><strong id="header-company-name">Company</strong></span></button><button class="primary" id="open-post" type="button"><span>+</span> Post a vacancy</button></div>
+        </header>
+        <p class="notice" id="verification-notice" hidden></p>
+        <section class="metrics" id="overview">
+            <article><i class="metric-icon purple">◫</i><span>Active vacancies</span><strong id="active-jobs">0</strong><small>Published roles</small></article>
+            <article><i class="metric-icon coral">◉</i><span>Applications</span><strong id="application-count">0</strong><small>Across all roles</small></article>
+            <article><i class="metric-icon gold">✦</i><span>Shortlisted candidates</span><strong id="shortlisted-count">0</strong><small>Ready for review</small></article>
+        </section>
+        <section class="panel" id="vacancies">
+            <div class="panel-head">
+                <div>
+                    <p class="eyebrow">Your vacancies</p>
+                    <h2>Manage jobs</h2>
+                </div><button class="text-button" id="show-all-jobs" type="button">View all</button>
+            </div>
+            <div id="job-list" class="job-list"></div>
+        </section>
+        <section class="panel" id="applications">
+            <div class="panel-head">
+                <div>
+                    <p class="eyebrow">Candidate pipeline</p>
+                    <h2>Applications</h2>
+                </div>
+            </div>
+            <div id="application-list" class="application-list"></div>
+        </section>
+        <section class="panel company-profile-panel" id="company">
+            <div class="panel-head company-profile-heading">
+                <div><p class="eyebrow">Company profile</p><h2 id="company-name">Company</h2><p id="company-status"></p></div>
+                <span class="verification-badge" id="verification-badge">Pending</span>
+            </div>
+            <form id="company-profile-form" class="company-profile-form">
+                <section class="company-profile-group company-identity-group">
+                    <div class="company-logo-editor"><span id="company-logo-preview"><b id="company-logo-initial">C</b><img id="company-logo-image" alt="Company logo" hidden /></span><div><strong>Company profile picture</strong><p>JPG, PNG or WebP. Your logo saves automatically after selection.</p><label class="logo-upload">Choose logo<input name="companyLogo" type="file" accept="image/jpeg,image/png,image/webp" /></label></div></div>
+                </section>
+                <section class="company-profile-group">
+                    <div class="profile-section-title"><span>01</span><div><h3>Employer account</h3><p>Contact details for the authorized company representative.</p></div></div>
+                    <div class="company-form-grid"><label>First name *<input name="firstName" required /></label><label>Last name *<input name="lastName" required /></label><label>Work email *<input name="workEmail" type="email" required /></label><label>Phone number *<div class="phone-fields"><select name="phoneCountryCode"><option>+91</option><option>+1</option><option>+44</option><option>+61</option></select><input name="phone" type="tel" required /></div></label><label class="wide">Designation *<select name="designation" required><option value="">Select designation</option><option>Founder / Owner</option><option>HR Director / Head</option><option>Talent Acquisition</option><option>Recruiter</option><option>Hiring Manager</option><option>Agency Recruiter</option><option>Other authorized representative</option></select></label></div>
+                </section>
+                <section class="company-profile-group">
+                    <div class="profile-section-title"><span>02</span><div><h3>Company information</h3><p>Information candidates see when they explore your company.</p></div></div>
+                    <div class="company-form-grid"><label>Registered legal name *<input name="legalName" required /></label><label>Brand / trading name<input name="brandName" /></label><label>Company website *<input name="website" type="url" required /></label><label>Company type *<select name="companyType" required><option value="">Select company type</option><option>Private Limited</option><option>Public Limited</option><option>LLP / Partnership</option><option>Sole Proprietorship</option><option>Non-profit</option><option>Government organization</option><option>Recruitment agency</option></select></label><label>Industry *<select name="industry" required><option value="">Select industry</option><option>Technology / Software</option><option>Finance / Fintech</option><option>Healthcare</option><option>Education</option><option>Retail / E-commerce</option><option>Manufacturing</option><option>Media / Marketing</option><option>Consulting</option><option>Other</option></select></label><label>Company size *<select name="companySize" required><option value="">Team size</option><option>1-10 employees</option><option>11-50 employees</option><option>51-200 employees</option><option>201-500 employees</option><option>501-1,000 employees</option><option>1,001-5,000 employees</option><option>5,000+ employees</option></select></label><label>Founded in<input name="founded" type="number" min="1800" max="2026" /></label><label class="wide">About the company *<textarea name="companyAbout" rows="5" maxlength="1000" required></textarea></label></div>
+                </section>
+                <section class="company-profile-group">
+                    <div class="profile-section-title"><span>03</span><div><h3>Office and registration</h3><p>Registered address and optional business identifiers.</p></div></div>
+                    <div class="company-form-grid"><label class="wide">Registered office address *<input name="address" required /></label><label>City *<input name="city" required /></label><label>State *<input name="state" required /></label><label>PIN / ZIP code *<input name="postalCode" required /></label><label>Corporate Identification No. (CIN)<input name="cin" /></label><label>GSTIN / Tax registration<input name="gstin" /></label></div>
+                </section>
+                <div class="company-profile-actions"><p id="company-profile-message" role="status"></p><button class="primary" type="submit">Save company profile</button></div>
+            </form>
+        </section>
+    </main>
+    <dialog id="candidate-dialog" class="candidate-view">
+        <form method="dialog"><div class="dialog-head"><div class="candidate-head"><span class="candidate-avatar" id="candidate-avatar">C</span><div><p class="eyebrow">Candidate profile</p><h2 id="candidate-name">Candidate</h2><p id="candidate-headline"></p></div></div><button value="cancel" type="button" id="close-candidate">×</button></div><div class="candidate-contact" id="candidate-contact"></div><section class="candidate-section"><h3>Professional summary</h3><p id="candidate-summary"></p></section><section class="candidate-section"><h3>Relevant skills</h3><div class="candidate-tags" id="candidate-skills"></div></section><section class="candidate-section"><h3>Work experience</h3><div class="candidate-history" id="candidate-experience"></div></section><section class="candidate-section"><h3>Education</h3><div class="candidate-history" id="candidate-education"></div></section><div class="candidate-view-actions"><button value="cancel" type="button" id="cancel-candidate">Close</button><button type="button" class="download-resume" id="download-resume">Download resume</button></div><p id="candidate-message"></p></form>
+    </dialog>
+    <dialog id="post-dialog">
+        <form id="post-job-form" method="dialog">
+            <div class="dialog-head">
+                <div>
+                    <p class="eyebrow">New vacancy</p>
+                    <h2>Post a job</h2>
+                </div><button value="cancel" type="button" id="close-post">×</button>
+            </div>
+            <div class="form-grid"><label>Job title *<input name="title" required maxlength="200"
+                        placeholder="e.g. Backend Developer" /></label><label>Department<input name="department"
+                        maxlength="120" placeholder="Engineering" /></label><label class="wide">Required skills *<input name="skills" required maxlength="500" placeholder="Java, Spring Boot, SQL, React" /><small>Separate skills with commas. Candidates can search by these skills.</small></label><label>Employment type *<select
+                        name="employmentType">
+                        <option value="full_time">Full-time</option>
+                        <option value="part_time">Part-time</option>
+                        <option value="contract">Contract</option>
+                        <option value="internship">Internship</option>
+                    </select></label><label>Work model *<select name="workModel">
+                        <option value="onsite">On-site</option>
+                        <option value="hybrid">Hybrid</option>
+                        <option value="remote">Remote</option>
+                    </select></label><label>City<input name="city" maxlength="120"
+                        placeholder="Pune" /></label><label>State<input name="state" maxlength="120"
+                        placeholder="Maharashtra" /></label><label>Minimum experience<input name="minExperienceYears"
+                        type="number" min="0" step=".5" /></label><label>Maximum experience<input
+                        name="maxExperienceYears" type="number" min="0" step=".5" /></label><label>Salary from<input
+                        name="salaryMin" type="number" min="0" /></label><label>Salary to<input name="salaryMax"
+                        type="number" min="0" /></label></div><label>Description *<textarea name="description" required
+                    rows="7" maxlength="6000"
+                    placeholder="Responsibilities, skills, and requirements."></textarea></label>
+            <p id="post-message"></p>
+            <div class="dialog-actions"><button value="cancel" type="button" id="cancel-post">Cancel</button><button
+                    class="primary" type="submit">Publish vacancy</button></div>
+        </form>
+    </dialog>
+    <script src="employer-dashboard.js"></script>
+</body>
+
+</html>
